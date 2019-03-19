@@ -1,9 +1,21 @@
 # README
 
+## Gems
 
-ruby 2.5.1
-rails 5.2.2
-devise
-cancancan
-rubocop
-rspec
+| Gems  | Purpose |
+| :---: |:-------:|
+| [Devise](https://github.com/plataformatec/devise) | User Authentication |
+| [Rspec](https://github.com/rspec/rspec-rails) | Default tests |
+| [Rubocop](https://github.com/rubocop-hq/rubocop) | Static code analyzer and formatter |
+| [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails) | Setting up Ruby objects as test data |
+| [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) | Simple one-liner tests |
+|  |  |
+| General | Version |
+| Ruby  | 2.5.1 |
+| Rails | 5.2.2 |
+
+#### TO DO
+[ ] Controller / Models / Views
+[ ] Adjustment in Views logic
+[ ] Rspec Tests
+[ ] Heroku
