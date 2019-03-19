@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top" lang="pt-br">
   <head>
-    <title>VideosOnDemand</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <title><%= content_for?(:title) ? yield(:title) : "Videos_on_Demand" %></title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="container is-fluid">
@@ -22,5 +22,7 @@
       <p class="notification is-danger"><%= alert %></p>
     <% end %>
     <%= yield %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

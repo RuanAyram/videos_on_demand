@@ -25,6 +25,12 @@
 </div>
 
 <div class="box">
-  <%= link_to t("views.edit"), eedit_video_path(@video), class: "button is-info" %> |
+  <%= link_to t("views.edit"), edit_video_path(@video), class: "button is-info" %> |
   <%= link_to t("views.back"), videos_path, class: "button is-default" %>
 </div>
+
+<video-js id=vid1 width=300 height=300 class="vjs-default-skin" controls>
+  <source
+     src="https://content.jwplatform.com/manifests/yp34SRmf.m3u8"
+     type="application/x-mpegURL">
+</video-js>

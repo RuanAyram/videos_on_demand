@@ -15,8 +15,8 @@
 | Rails | 5.2.2 |
 
 #### TO DO
-- [ x ] Controller / Models / Views
-- [ ] Video player
+- [x] Controller / Models / Views
+- [x] Video player
 - [ ] Adjustment in Views logic
 - [ ] Rspec Tests
 - [ ] Heroku
