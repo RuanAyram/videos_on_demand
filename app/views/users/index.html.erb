@@ -1,0 +1,70 @@
+<%= content_for(:title, t("views.app_name") + " | " + t("views.users.listing")) %>
+
+<div class="row">
+    <div class="col-md-12">
+        <h1><%= t("views.users.listing") %></h1>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-10">
+                <%#= paginate @users %>
+            </div>
+            <div class="col-md-2">
+                <br>
+                <%= link_to t("views.users.new"), new_user_path, class: "btn btn-success" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="well well-sm">
+    <%#= page_entries_info @users %>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="no-more-tables">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th nowrap="nowrap"><%= t("activerecord.attributes.user.email") %></th>
+                        <th class="text-center"><%=t '.actions', :default => t("helpers.actions") %></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <td data-title="<%= t("activerecord.attributes.user.email") %>"><%= user.email %></td>
+                            <td nowrap="nowrap" data-title="<%=t '.actions', :default => t("helpers.actions") %>" class="text-center vertical-middle col-md-3">
+                                <%= link_to t("views.show"), user, class: "btn btn-info" %>
+                                <%= link_to t("views.edit"), edit_user_path(user), class: "btn btn-primary" %>
+                                <%= link_to t("views.destroy"), user, method: :delete, data: { confirm: t("views.are_you_sure") }, class: "btn btn-danger" %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="well well-sm">
+    <%#= page_entries_info @users %>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-10">
+                <%#= paginate @users %>
+            </div>
+            <div class="col-md-2">
+                <br>
+                <%= link_to t("views.users.new"), new_user_path, class: "btn btn-success" %>
+            </div>
+        </div>
+    </div>
+</div>

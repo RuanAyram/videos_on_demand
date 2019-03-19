@@ -1,0 +1,9 @@
+# encoding: UTF-8
+pt-BR:
+  unauthorized:
+    default: "Mensagem de erro padrão"
+    manage:
+      all: "Sem autorização para %{action} %{subject}"
+      user: "Sem permissão para gerenciar outra(s) conta(s) de usuário"
+    update:
+      project: "Sem permissão para atualizar esse projeto"

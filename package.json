@@ -1,0 +1,12 @@
+{
+  "name": "videos_on_demand",
+  "private": false,
+  "version": "0.0.1",
+  "description": "Netshow.me Challenge",
+  "author": "Ruan <ruan_kaylo@yahoo.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "@videojs/http-streaming": "^1.9.2",
+    "bulma": "^0.7.4"
+  }
+}

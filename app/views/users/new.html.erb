@@ -1,0 +1,23 @@
+<%= content_for(:title, t("views.app_name") + " | " + t("views.users.new")) %>
+
+<div class="row">
+    <div class="col-md-12">
+        <h1><%= t("views.users.new") %></h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <%= render 'form', user: @user %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <%= link_to t("views.back"), users_path, class: "btn btn-default" %>
+            </div>
+        </div>
+    </div>
+</div>

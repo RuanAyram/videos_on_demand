@@ -1,0 +1,13 @@
+<h1 class="title">Seja bem-vindo</h1>
+
+<p>Confira nossa lista de vídeos:</p>
+
+<% @videos.each do |video| %>
+  <div class="card">
+    <div class="card-content">
+      <p>Nome: <%= video.name %></p>
+      <p>Usuário: <%= video.user.email %></p>
+      <%= link_to 'Show', video %>
+    </div>
+  </div>
+<% end %>
