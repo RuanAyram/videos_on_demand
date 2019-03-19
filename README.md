@@ -15,7 +15,7 @@
 | Rails | 5.2.2 |
 
 #### TO DO
-[ ] Controller / Models / Views
-[ ] Adjustment in Views logic
-[ ] Rspec Tests
-[ ] Heroku
+- [ ] Controller / Models / Views
+- [ ] Adjustment in Views logic
+- [ ] Rspec Tests
+- [ ] Heroku
