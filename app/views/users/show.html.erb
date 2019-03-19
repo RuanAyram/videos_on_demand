@@ -1,28 +1,20 @@
 <%= content_for(:title, t("views.app_name") + " | " + t("views.users.show")) %>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <strong><%= t("views.users.show") %>:</strong>
-    </div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-12">
-                <p>
-                    <strong><%= t("activerecord.attributes.user.email") %>:</strong>
-                    <%= @user.email %>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+<br>
 
 <div class="panel panel-default">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-lg-12">
-                <%= link_to t("views.edit"), edit_user_path(@user), class: "btn btn-primary" %> |
-                <%= link_to t("views.back"), users_path, class: "btn btn-default" %>
-            </div>
-        </div>
-    </div>
+  <div class="panel-heading">
+    <strong><%= t("views.users.show") %>:</strong>
+  </div>
+  <div class="box">
+    <p>
+      <strong><%= t("activerecord.attributes.user.email") %>:</strong>
+      <%= @user.email %>
+    </p>
+  </div>
+</div>
+
+<div class="box">
+  <%= link_to t("views.edit"), edit_user_path(@user), class: "button is-info" %> |
+  <%= link_to t("views.back"), users_path, class: "button is-default" %>
 </div>

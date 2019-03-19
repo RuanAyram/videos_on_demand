@@ -6,11 +6,11 @@ class Video < ApplicationRecord
 
   ##### VALIDATIONS
   validates :name, :url, presence: true
-  validate :type_of_video
+  validate :video_format
 
-  def type_of_video
+  def video_format
     if url.split('.').last != 'm3u8'
-      errors.add(:url, 'Type of video is not valid')
+      errors.add(:url, 'The correct format is .m3u8')
     end
   end
 end

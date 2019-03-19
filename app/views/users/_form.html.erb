@@ -1,48 +1,47 @@
 <%= form_with(model: user, local: true) do |f| %>
     <% if @user.errors.any? %>
-        <div id="error_explanation" class="panel panel-danger">
-            <div class="panel-heading">
-                <h4><%= pluralize(@user.errors.count, "error", plural: "erros impedem") %> <%= t("controllers.users.errors") %>:</h4>
-            </div>
-            <div class="panel-body">
-                <ul class="list-group">
-                <% @user.errors.full_messages.each do |msg| %>
-                    <li  class="list-group-item"><%= msg %></li>
-                <% end %>
-                </ul>
-            </div>
+      <div id="error_explanation" class="panel panel-danger">
+        <div class="panel-heading">
+          <h4><%= pluralize(@user.errors.count, "error", plural: "erros impedem") %> <%= t("controllers.users.errors") %>:</h4>
         </div>
-    <% end %>
-    <% if !@user.new_record? %>
-        <%= hidden_field_tag :id, @user.id %>
+        <div class="panel-body">
+          <ul class="list-group">
+          <% @user.errors.full_messages.each do |msg| %>
+            <li  class="list-group-item"><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
     <% end %>
 
-    <div class="form-group">
-        <%= f.label :email %>
-        <%= f.text_field :email, class: "form-control" %>
+    <% if !@user.new_record? %>
+      <%= hidden_field_tag :id, @user.id %>
+    <% end %>
+
+    <div class="field">
+      <div class="control">
+        <%= f.label :email, class: "label" %>
+        <%= f.email_field :email, class: 'input', placeholder: "Email" %>
+      </div>
     </div>
 
     <% if @user.new_record? %>
-        <div class="form-group">
-            <%= f.label :password %><br/>
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <div class="field">
+        <div class="control">
+          <%= f.label :password, class: "label" %>
+          <%= f.password_field :password, autocomplete: "off", class: 'input', placeholder: "Senha"%>
         </div>
+    </div>
 
-        <div class="form-group">
-            <%= f.label :password_confirmation %><br/>
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %><br/>
+      <div class="field">
+        <div class="control">
+          <%= f.label :password_confirmation, class: "label" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input', placeholder: "Confirmação de Senha" %>
         </div>
+    </div>
     <% end -%>
 
-    <div class="panel panel-warning">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-5"></div>
-                <div class="col-md-3">
-                    <%= f.submit class: "btn btn-warning" %>
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-        </div>
+    <div class="control">
+        <%= f.submit class: "button is-success" %>
     </div>
 <% end %>

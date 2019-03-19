@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%= content_for(:title, t("views.app_name") + " | " + t("views.users.show")) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @video.name %>
-</p>
+<br>
 
-<p>
-  <strong>Url:</strong>
-  <%= @video.url %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong><%= t("views.users.show") %>:</strong>
+  </div>
+  <div class="box">
+    <p>
+      <strong>Name:</strong>
+      <%= @video.name %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @video.user.email if @video.user.present? %>
-</p>
+    <p>
+      <strong>Url:</strong>
+      <%= @video.url %>
+    </p>
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+    <p>
+      <strong>User:</strong>
+      <%= @video.user.email if @video.user.present? %>
+    </p>
+  </div>
+</div>
+
+<div class="box">
+  <%= link_to t("views.edit"), eedit_video_path(@video), class: "button is-info" %> |
+  <%= link_to t("views.back"), videos_path, class: "button is-default" %>
+</div>

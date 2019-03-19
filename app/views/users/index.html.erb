@@ -1,70 +1,54 @@
-<%= content_for(:title, t("views.app_name") + " | " + t("views.users.listing")) %>
+<%= content_for(:title, t("views.app_name") + " | " + "Usuários") %>
 
-<div class="row">
-    <div class="col-md-12">
-        <h1><%= t("views.users.listing") %></h1>
-    </div>
+<br>
+
+<div class="box">
+  <h1 class="title">
+    Usuários
+    <%= link_to 'Novo Usuário', new_user_path, class: "button is-primary is-pulled-right" %>
+  </h1>
 </div>
 
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-10">
-                <%#= paginate @users %>
-            </div>
-            <div class="col-md-2">
-                <br>
-                <%= link_to t("views.users.new"), new_user_path, class: "btn btn-success" %>
-            </div>
-        </div>
-    </div>
+<div class="pagination">
+  <%= paginate @users%>
 </div>
 
-<div class="well well-sm">
-    <%#= page_entries_info @users %>
+<br>
+
+<table class="table is-striped is-bordered is-fullwidth">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th><%= "Email" %></th>
+      <th class="has-text-centered" colspan="3"><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each_with_index do |user, index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= user.email %></td>
+          <td><%= link_to t("views.show"), user, class: "button is-warning" %></td>
+          <td><%= link_to t("views.edit"), edit_user_path(user), class: "button is-info" %></td>
+          <td>
+            <%= link_to t("views.destroy"), user, method: :delete, data: { confirm: t("views.are_you_sure") }, class: "button is-danger" %>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="pagination">
+  <%= paginate @users%>
 </div>
 
-<div class="row">
-    <div class="col-md-12">
-        <div id="no-more-tables">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th nowrap="nowrap"><%= t("activerecord.attributes.user.email") %></th>
-                        <th class="text-center"><%=t '.actions', :default => t("helpers.actions") %></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @users.each do |user| %>
-                        <tr>
-                            <td data-title="<%= t("activerecord.attributes.user.email") %>"><%= user.email %></td>
-                            <td nowrap="nowrap" data-title="<%=t '.actions', :default => t("helpers.actions") %>" class="text-center vertical-middle col-md-3">
-                                <%= link_to t("views.show"), user, class: "btn btn-info" %>
-                                <%= link_to t("views.edit"), edit_user_path(user), class: "btn btn-primary" %>
-                                <%= link_to t("views.destroy"), user, method: :delete, data: { confirm: t("views.are_you_sure") }, class: "btn btn-danger" %>
-                            </td>
-                        </tr>
-                    <% end %>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+<br>
 
-<div class="well well-sm">
-    <%#= page_entries_info @users %>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-10">
-                <%#= paginate @users %>
-            </div>
-            <div class="col-md-2">
-                <br>
-                <%= link_to t("views.users.new"), new_user_path, class: "btn btn-success" %>
-            </div>
-        </div>
-    </div>
+<div class="box">
+  <h1 class="title">
+    Usuários
+    <%= link_to 'Novo Usuário', new_user_path, class: "button is-primary is-pulled-right" %>
+  </h1>
 </div>
