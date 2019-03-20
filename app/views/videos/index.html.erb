@@ -1,56 +1,58 @@
 <%= content_for(:title, t("views.app_name") + " | " + "Videos") %>
 
-<br>
+<div class="container is-fluid">
+  <br>
 
-<div class="box">
-  <h1 class="title">
-    Vídeos
-    <%= link_to 'Novo Vídeo', new_video_path, class: "button is-primary is-pulled-right" %>
-  </h1>
-</div>
+  <div class="box">
+    <h1 class="title">
+      Vídeos
+      <%= link_to 'Novo Vídeo', new_video_path, class: "button is-primary is-pulled-right" %>
+    </h1>
+  </div>
 
-<div class="pagination">
-  <%= paginate @videos %>
-</div>
+  <div class="pagination">
+    <%= paginate @videos %>
+  </div>
 
-<br>
+  <br>
 
-<table class="table is-striped is-bordered is-fullwidth">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th><%= "Nome" %></th>
-      <th><%= "Url" %></th>
-      <th><%= "Usuário" %></th>
-      <th class="has-text-centered" colspan="3"><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @videos.each_with_index do |video, index| %>
-     <tr>
-        <td><%= index+1 %></td>
-        <td><%= video.name %></td>
-        <td><%= video.url %></td>
-        <td><%= video.user.email if video.user.present? %></td>
-        <td><%= link_to 'Show', video, class: "button is-warning" %></td>
-        <td><%= link_to 'Edit', edit_video_path(video), class: "button is-info" %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-danger" %></td>
+  <table class="table is-striped is-bordered is-fullwidth">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><%= "Nome" %></th>
+        <th><%= "Url" %></th>
+        <th><%= "Usuário" %></th>
+        <th class="has-text-centered" colspan="3"><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @videos.each_with_index do |video, index| %>
+       <tr>
+          <td><%= index+1 %></td>
+          <td><%= video.name %></td>
+          <td><%= video.url %></td>
+          <td><%= video.user.email if video.user.present? %></td>
+          <td><%= link_to 'Show', video, class: "button is-warning" %></td>
+          <td><%= link_to 'Edit', edit_video_path(video), class: "button is-info" %></td>
+          <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<div class="pagination">
-  <%= paginate @videos %>
-</div>
+  <div class="pagination">
+    <%= paginate @videos %>
+  </div>
 
-<br>
+  <br>
 
-<div class="box">
-  <h1 class="title">
-    Vídeos
-    <%= link_to 'Novo Vídeo', new_video_path, class: "button is-primary is-pulled-right" %>
-  </h1>
+  <div class="box">
+    <h1 class="title">
+      Vídeos
+      <%= link_to 'Novo Vídeo', new_video_path, class: "button is-primary is-pulled-right" %>
+    </h1>
+  </div>
 </div>

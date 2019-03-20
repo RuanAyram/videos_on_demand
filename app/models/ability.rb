@@ -33,11 +33,9 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    virtual_id = Video.where(user: user).map(&:id)
-
     can :create, User
     can %i[create show], Video
-    can %i[read update], Video, user_id: virtual_id
+    can %i[read update], Video, user_id: user.id
     can %i[read show update], User, id: user.id
   end
 end

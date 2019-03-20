@@ -1,0 +1,9 @@
+# encoding: UTF-8
+pt-BR:
+  views:
+    pagination:
+        first: "&laquo; Início"
+        last: "Último &raquo;"
+        previous: "&lsaquo; Voltar"
+        next: "Avançar &rsaquo;"
+        truncate: "..."

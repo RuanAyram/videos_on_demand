@@ -1,20 +1,22 @@
 <%= content_for(:title, t("views.app_name") + " | " + t("views.users.show")) %>
 
-<br>
+<div class="container is-fluid">
+  <br>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <strong><%= t("views.users.show") %>:</strong>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <strong><%= t("views.users.show") %>:</strong>
+    </div>
+    <div class="box">
+      <p>
+        <strong><%= t("activerecord.attributes.user.email") %>:</strong>
+        <%= @user.email %>
+      </p>
+    </div>
   </div>
+
   <div class="box">
-    <p>
-      <strong><%= t("activerecord.attributes.user.email") %>:</strong>
-      <%= @user.email %>
-    </p>
+    <%= link_to t("views.edit"), edit_user_path(@user), class: "button is-info" %> |
+    <%= link_to t("views.back"), users_path, class: "button is-default" %>
   </div>
-</div>
-
-<div class="box">
-  <%= link_to t("views.edit"), edit_user_path(@user), class: "button is-info" %> |
-  <%= link_to t("views.back"), users_path, class: "button is-default" %>
 </div>
