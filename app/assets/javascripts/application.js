@@ -10,10 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// require jquery/dist/jquery.min.js
 //= require activestorage
-//= require video.js/dist/video.min
+//= require video.js/dist/video.min.js
 //= require_tree ./site
-
-
-
-/*require jquery/dist/jquery.min*/
