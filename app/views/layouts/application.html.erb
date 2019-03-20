@@ -16,10 +16,16 @@
   <body>
     <%= render "shared/menu" %>
     <% if notice %>
-      <p class="notification is-warning"><%= notice %></p>
+      <p class="notification is-warning">
+        <button class="delete"></button>
+        <%= notice %>
+      </p>
     <% end %>
     <% if alert %>
-      <p class="notification is-danger"><%= alert %></p>
+      <p class="notification is-danger">
+        <button class="delete"></button>
+        <%= alert %>
+      </p>
     <% end %>
     <%= yield %>
     <%= render "shared/footer" %>
