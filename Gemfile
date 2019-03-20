@@ -70,6 +70,11 @@ group :development do
   gem 'rubocop', require: false
 end
 
+group :production, :staging, :import do
+  # Agilizar a execução da aplicação, com base em: 12factor.net
+  gem 'rails_12factor'
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
