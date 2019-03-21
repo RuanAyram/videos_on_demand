@@ -1,26 +1,51 @@
-<nav class="columns is-mobile is-dark navbar is-fixed-top">
-    <div class="column is-2-desktop logo">
-      <small><%= current_user.email if user_signed_in? %></small>
-    </div>
+<nav class="navbar is-mobile is-light navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item icon is-large" href="<%= root_path %>">
+      <i class="fas fa-video fa-2x"></i>
+    </a>
 
-    <div class="column menu-button">
-        <% if user_signed_in? %>
-            <div class="dropdown is-hoverable is-pulled-right is-right">
-                <div class="dropdown-trigger">
-                    <a class="icon is-large" aria-haspopup="true" aria-controls="dropdown-menu">
-                      <i class="fas fa-cog fa-2x has-text-white-bis"></i>
-                    </a>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                      <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
-                      <hr class="dropdown-divider">
-                      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                    </div>
-                </div>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <% if user_signed_in? %>
+      <div class="navbar-start">
+        <a class="navbar-item" href="<%= users_path %>">Usuários</a>
+
+        <a class="navbar-item" href="<%= videos_path %>">Vídeos</a>
+      </div>
+    <% end -%>
+
+
+    <div class="navbar-end">
+      <% if user_signed_in? %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"><%= current_user.email %></a>
+
+          <div class="navbar-dropdown is-right">
+              <%= link_to "Ver Perfil", user_path(current_user.id), class: "navbar-item button is-dark" %>
+              <hr class="navbar-divider">
+              <%= link_to "Editar Perfil", edit_user_registration_path, class: "navbar-item button is-dark" %>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <%= link_to "Sair", destroy_user_session_path, method: :get, class: "button is-pulled-right is-dark" %>
+          </div>
+        </div>
+        <% else -%>
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to "Cadastrar", new_user_registration_path, class: "button is-primary" %>
+              <%= link_to "Login", new_user_session_path, class: "button is-pulled-right is-dark" %>
             </div>
-        <% else %>
-          <%= link_to "ENTRAR", new_user_session_path, class: "button is-pulled-right is-outlined is-white" %>
-        <% end %>
+          </div>
+        <% end -%>
+      </div>
     </div>
+  </div>
 </nav>

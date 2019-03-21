@@ -34,8 +34,8 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     can :create, User
-    can %i[create show], Video
-    can %i[read update], Video, user_id: user.id
     can %i[read show update], User, id: user.id
+    can %i[read create show], Video
+    can %i[update destroy], Video, user_id: user.id
   end
 end

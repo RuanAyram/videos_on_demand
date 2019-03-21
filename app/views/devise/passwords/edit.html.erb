@@ -1,25 +1,35 @@
-<h2>Change your password</h2>
+<div id="login">
+  <div class="login-card">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+    <div class="card-title">
+      <h1><%= t('views.app_name')%> - Alterar sua senha </h1>
+    </div>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    <div class="content">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+        <% end %>
+        <%= f.password_field :password, autofocus: true, id: "password", placeholder:"Nova senha" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", id: "password", placeholder: "Confirmar Senha" %>
+        <div class="level options">
+          <% if devise_mapping.rememberable? -%>
+              <div class="checkbox level-left">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+          <% end %>
+          <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "btn btn-primary" %><br />
+        </div>
+        <div class="actions">
+          <%= f.submit "Alter minha senha", class: "btn-login btn-lg btn-primary"%>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+</div>
 
 <%= render "devise/shared/links" %>

@@ -15,12 +15,15 @@
 | Rails | 5.2.2 |
 
 ### Heroku
+
 [Videos_on_Demand](https://videos-on-demand.herokuapp.com/)
 
 #### TO DO
+
 - [x] Controller / Models / Views
 - [x] Video player
 - [ ] Adjustment in Views(Model) logic
 - [ ] Rspec Tests
-- [ ] Devise views
+- [ ] Seeds
+- [x] Devise views
 - [x] Heroku

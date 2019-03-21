@@ -44,8 +44,10 @@ gem 'devise'
 # Pagination
 gem 'kaminari'
 
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Integrates Bulma with the rails asset pipeline
 gem 'bulma-rails', '~> 0.7.4'
 
 group :development, :test do
