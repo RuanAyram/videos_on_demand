@@ -12,11 +12,23 @@
         <strong><%= t("activerecord.attributes.user.email") %>:</strong>
         <%= @user.email %>
       </p>
+
+      <p>
+        <strong><%= t("activerecord.attributes.user.videos") %>:</strong>
+        <% @user.videos.each do |uv| %>
+          <a href="<%= video_path(uv.id) %>" class="box">
+            <%= uv.name %>
+            <span class="tag is-success"><%= View.views_by_video(uv.id) %></span>
+          </a>
+        <% end -%>
+      </p>
     </div>
   </div>
 
   <div class="box">
-    <%= link_to t("views.edit"), edit_user_path(@user), class: "button is-info" %> |
+    <% if can? :update, @user %>
+      <%= link_to t("views.edit"), edit_user_path(@user), class: "button is-info" %> |
+    <% end -%>
     <%= link_to t("views.back"), users_path, class: "button is-default" %>
   </div>
 </div>

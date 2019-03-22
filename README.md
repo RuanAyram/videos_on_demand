@@ -14,6 +14,35 @@
 | Ruby  | 2.5.1 |
 | Rails | 5.2.2 |
 
+## Getting started
+
+Clone the repository
+```
+git clone git@github.com:RuanAyram/videos_on_demand.git
+```
+
+#### Edit `config/database.yml`, if necessary
+
+Enter in the folder, then run these commands to install gems, create a database and populate, then run api locally
+```
+cd videos_on_demand
+
+bundle install
+
+rails db:create && rails db:migrate && rails db:seed
+
+rails s
+```
+
+### For login: use the email(fixed_user@email.com) with password(123456789)
+
+
+### For test, run:
+
+```
+ $ bundle exec rspec
+```
+
 ### Heroku
 
 [Videos_on_Demand](https://videos-on-demand.herokuapp.com/)
@@ -22,8 +51,8 @@
 
 - [x] Controller / Models / Views
 - [x] Video player
-- [ ] Adjustment in Views(Model) logic
+- [x] Adjustment in Views(Model) logic
 - [ ] Rspec Tests
-- [ ] Seeds
+- [x] Seeds
 - [x] Devise views
 - [x] Heroku

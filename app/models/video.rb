@@ -2,7 +2,8 @@
 
 class Video < ApplicationRecord
   ##### RELATIONSHIPS
-  belongs_to :user
+  has_many :views, dependent: :destroy
+  belongs_to :user, counter_cache: true
 
   ##### VALIDATIONS
   validates :name, :url, presence: true

@@ -22,7 +22,8 @@
     <thead>
       <tr>
         <th>#</th>
-        <th><%= "Email" %></th>
+        <th>Email</th>
+        <th>Total de vídeos</th>
         <th class="has-text-centered" colspan="3"><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
     </thead>
@@ -31,6 +32,7 @@
           <tr>
             <td><%= index+1 %></td>
             <td><%= user.email %></td>
+            <td><%= user.videos_count %></td>
             <td><%= link_to t("views.show"), user, class: "button is-warning" %></td>
             <td><%= link_to t("views.edit"), edit_user_path(user), class: "button is-info" %></td>
             <td>

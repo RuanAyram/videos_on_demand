@@ -44,3 +44,8 @@ video_count = 1
 
   video.save!
 end
+
+puts '#### VIEWS'
+Video.all.each do |video|
+  view = View.create!(view_count: rand(0..15), video: video)
+end

@@ -12,8 +12,8 @@
           <div class="card-content">
             <div class="content">
               <p>Nome: <span class="has-text-weight-bold"><%= video.name %></span></p>
-              <p>Views: <span class="tag is-success">0</span></p>
-              <p class="has-text-weight-bold"><%= video.user.email %></p>
+              <p>Views: <span class="tag is-success"><%= View.views_by_video(video.id) %></span></p>
+              <p class="has-text-weight-bold"><%= link_to video.user.email, user_path(video.user.id), class: "button is-text" %></a></p>
               <div class="has-text-centered">
                 <%= link_to "Show", video, class: "button is-rounded" %>
               </div>

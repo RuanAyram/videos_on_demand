@@ -13,7 +13,16 @@ class VideosController < ApplicationController
 
   # GET /videos/1
   # GET /videos/1.json
-  def show; end
+  def show
+    @view = View.find_by(video_id: @video.id)
+    @all_views = @view.nil? ? 0 : @view.view_count
+
+    if @all_views == 0
+      View.create!(view_count: @all_views + 1, video_id: @video.id)
+    else
+      @view.update(view_count: @all_views + 1)
+    end
+  end
 
   # GET /videos/new
   def new
@@ -30,7 +39,7 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       if @video.save
-        format.html { redirect_to @video, notice: 'Video Created.' }
+        format.html { redirect_to root_path, notice: 'Video Created.' }
         format.json { render :show, status: :created, location: @video }
       else
         format.html { render :new }
@@ -44,7 +53,7 @@ class VideosController < ApplicationController
   def update
     respond_to do |format|
       if @video.update(video_params)
-        format.html { redirect_to @video, notice: 'Video Updated.' }
+        format.html { redirect_to root_path, notice: 'Video Updated.' }
         format.json { render :show, status: :ok, location: @video }
       else
         format.html { render :edit }
