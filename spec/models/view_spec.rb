@@ -3,5 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe View, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'when testing associations' do
+    it { should belong_to(:video) }
+  end
 end

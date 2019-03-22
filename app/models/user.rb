@@ -10,6 +10,6 @@ class User < ApplicationRecord
 
   ##### VALIDATIONS
   validates_associated :videos
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true
   validates :password, presence: true
 end

@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :view do
     count { 1 }
-    video { nil }
+    video { create(:video) }
   end
 end

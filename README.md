@@ -36,11 +36,10 @@ rails s
 
 ### For login: use the email(fixed_user@email.com) with password(123456789)
 
-
 ### For test, run:
 
 ```
- $ bundle exec rspec
+ $ rspec
 ```
 
 ### Heroku
@@ -52,7 +51,7 @@ rails s
 - [x] Controller / Models / Views
 - [x] Video player
 - [x] Adjustment in Views(Model) logic
-- [ ] Rspec Tests
+- [x] Rspec Tests
 - [x] Seeds
 - [x] Devise views
 - [x] Heroku

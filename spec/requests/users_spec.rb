@@ -2,10 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Videos', type: :request do
-  describe 'GET /videos' do
+RSpec.describe 'Users', type: :request do
+  describe 'GET /users' do
     it 'works!' do
-      get videos_path
+      get users_path
       expect(response).to have_http_status(200)
     end
   end

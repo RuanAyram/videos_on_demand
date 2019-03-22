@@ -3,5 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe Video, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'when testing associations' do
+    it { should have_many(:views) }
+    it { should belong_to(:user) }
+  end
+
+  context 'when testing validations' do
+    before { allow(subject).to receive(:video_format).and_return(false) }
+
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:url) }
+  end
 end

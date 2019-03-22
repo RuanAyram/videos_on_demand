@@ -59,6 +59,8 @@ group :development, :test do
 
   # Simple one-liner tests
   gem 'shoulda-matchers', '~> 3.1'
+
+  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 end
 
 group :development do

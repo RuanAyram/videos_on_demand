@@ -6,7 +6,8 @@ class Video < ApplicationRecord
   belongs_to :user, counter_cache: true
 
   ##### VALIDATIONS
-  validates :name, :url, presence: true
+  validates :name, presence: true
+  validates :url, presence: true
   validate :video_format
 
   def video_format

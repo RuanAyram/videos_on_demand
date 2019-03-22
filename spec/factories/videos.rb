@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :video do
-    name { 'MyString' }
-    url { 'MyString' }
-    user { nil }
+    name { Faker::Movie.quote }
+    url { 'https://content.jwplatform.com/manifests/yp34SRmf.m3u8' }
+    user { create(:user) }
   end
 end
