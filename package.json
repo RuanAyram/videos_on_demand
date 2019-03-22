@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
-    "@videojs/http-streaming": "^1.9.2"
+    "@videojs/http-streaming": "^1.9.2",
+    "bulma": "^0.7.4"
   }
 }
