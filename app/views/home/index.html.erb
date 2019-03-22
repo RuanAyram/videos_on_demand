@@ -5,19 +5,28 @@
 
   <p>Confira nossa lista de vídeos:</p>
 
-  <% if @videos.each do |video| %>
-    <div class="card">
-      <div class="card-content">
-        <p>Nome: <%= video.name %></p>
-        <p>Usuário: <%= video.user.email %></p>
-        <%= link_to 'Show', video %>
+  <div class="columns is-multiline">
+    <% if @videos.each do |video| %>
+      <div class="column is-one-quarter">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p>Nome: <span class="has-text-weight-bold"><%= video.name %></span></p>
+              <p>Views: <span class="tag is-success">0</span></p>
+              <p class="has-text-weight-bold"><%= video.user.email %></p>
+              <div class="has-text-centered">
+                <%= link_to "Show", video, class: "button is-rounded" %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end.empty? %>
-    <div class="card">
-      <div class="card-content">
-        <h1 class="title has-text-centered">Nada cadastrado ainda :/</h1>
+    <% end.empty? %>
+      <div class="card">
+        <div class="card-content">
+          <h1 class="title has-text-centered">Nada cadastrado ainda :/</h1>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

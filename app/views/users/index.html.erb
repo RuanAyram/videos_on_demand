@@ -6,7 +6,9 @@
   <div class="box">
     <h1 class="title">
       Usuários
-      <%= link_to 'Novo Usuário', new_user_path, class: "button is-primary is-pulled-right" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Novo Usuário', new_user_path, class: "button is-primary is-pulled-right" %>
+      <% end -%>
     </h1>
   </div>
 
@@ -50,7 +52,9 @@
   <div class="box">
     <h1 class="title">
       Usuários
-      <%= link_to 'Novo Usuário', new_user_path, class: "button is-primary is-pulled-right" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Novo Usuário', new_user_path, class: "button is-primary is-pulled-right" %>
+      <% end -%>
     </h1>
   </div>
 </div>
